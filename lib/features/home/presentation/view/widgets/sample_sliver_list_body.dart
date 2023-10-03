@@ -1,0 +1,31 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_challenge/core/shared_widgets/standard_divider.dart';
+import 'package:flutter_challenge/features/home/presentation/view/widgets/sample_item.dart';
+
+class SampleSliverListBody extends StatelessWidget {
+  const SampleSliverListBody(
+      {super.key,
+      required this.sample,
+      required this.sampleLength,
+      required this.index});
+  final String sample;
+  final int sampleLength;
+  final int index;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16),
+          child: SampleItem(
+            sample: sample,
+          ),
+        ),
+        StandardDivider(
+          length: sampleLength,
+          index: index,
+        ),
+      ],
+    );
+  }
+}
