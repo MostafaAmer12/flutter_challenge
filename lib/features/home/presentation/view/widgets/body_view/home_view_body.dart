@@ -9,43 +9,44 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('This is App'),
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
-      body: const SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 16),
-          child: CustomScrollView(
-            slivers: [
-              SliverToBoxAdapter(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    MyDivider(),
-                    TitleStandard(
-                      title: 'Top Likes',
-                    ),
-                  ],
-                ),
+    return  Scaffold(
+      body: SafeArea(
+        child: CustomScrollView(
+          slivers: [
+            const SliverToBoxAdapter(
+              child: TitleStandard(
+                title: 'This is App',
+                fontsize: 24,
+                crossAxisAlignment: CrossAxisAlignment.center,
               ),
-              SampleSliverList(),
-              SliverToBoxAdapter(
-                child: Column(
-                  children: [
-                    TitleStandard(
-                      title: 'Top Likes',
-                    ),
-                    PlayItem(),
-                    MyDivider(),
-                  ],
-                ),
+            ),
+            const SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TitleStandard(
+                    title: 'Top Likes',
+                    fontsize: 14,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+            const SampleSliverList(),
+            SliverToBoxAdapter(
+              child: Column(
+                children: [
+                  const TitleStandard(
+                    title: 'Top Likes',
+                    fontsize: 14,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                  ),
+                  PlayItem(onPressed: () {  },),
+                  const MyDivider(),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_challenge/features/home/presentation/view/home_view.dart';
+import 'package:flutter_challenge/features/setting/tab_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +17,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomeView(),
-
+      home: const TabBarWidget(),
     );
   }
 }

@@ -2,12 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_challenge/core/utils/divider.dart';
 
 class TitleStandard extends StatelessWidget {
-  const TitleStandard({super.key, required this.title});
+  const TitleStandard({
+    super.key,
+    required this.title,
+    required this.fontsize,
+    required this.crossAxisAlignment,
+  });
   final String title;
+  final double fontsize;
+  final CrossAxisAlignment crossAxisAlignment;
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: crossAxisAlignment,
       children: [
         Padding(
           padding: const EdgeInsets.only(
@@ -17,7 +24,7 @@ class TitleStandard extends StatelessWidget {
           ),
           child: Text(
             title,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontsize),
           ),
         ),
         const MyDivider(),

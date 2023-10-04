@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
 class SettingItem extends StatelessWidget {
-  const SettingItem({super.key, required this.settingName});
-final String settingName;
+  const SettingItem(
+      {super.key, required this.settingName, required this.onPressed, this.isTrue=false});
+  final String settingName;
+  final void Function() onPressed;
+  final bool isTrue;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -14,7 +18,17 @@ final String settingName;
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text(settingName),
           ),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.swap_vertical_circle_sharp))
+          IconButton(
+            onPressed: onPressed,
+            icon: isTrue
+                ? const Icon(
+                    Icons.toggle_on_outlined,
+                    color: Colors.deepPurpleAccent,
+                  )
+                : const Icon(
+                    Icons.toggle_off_outlined,
+                  ),
+          )
         ],
       ),
     );

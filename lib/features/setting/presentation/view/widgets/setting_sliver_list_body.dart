@@ -19,6 +19,7 @@ class SettingSliverBody extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 16),
           child: SettingItem(
             settingName: setting,
+            onPressed: () {},
           ),
         ),
         StandardDivider(

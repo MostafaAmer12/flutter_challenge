@@ -7,31 +7,26 @@ class SettingViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('More'),
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
-      body: const SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 16),
-          child: CustomScrollView(
-            slivers: [
-              SliverToBoxAdapter(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    TitleStandard(
-                      title: 'Settings',
-                    ),
-                  ],
-                ),
+    return const Scaffold(
+      body: SafeArea(
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: TitleStandard(
+                title: 'More',
+                fontsize: 24,
+                crossAxisAlignment: CrossAxisAlignment.center,
               ),
-              SettingSliverList(),
-            ],
-          ),
+            ),
+            SliverToBoxAdapter(
+              child: TitleStandard(
+                title: 'Settings',
+                fontsize: 14,
+                crossAxisAlignment: CrossAxisAlignment.start,
+              ),
+            ),
+            SettingSliverList(),
+          ],
         ),
       ),
     );

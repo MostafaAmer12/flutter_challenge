@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
 class SampleItem extends StatelessWidget {
-  const SampleItem({super.key, required this.sample});
+  const SampleItem({super.key, required this.sample, this.isFavourite = false, required this.onPressed});
   final String sample;
+
+  final bool isFavourite;
+  final void Function() onPressed;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -14,7 +18,11 @@ class SampleItem extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text(sample),
           ),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.heart_broken))
+          IconButton(
+              onPressed: onPressed,
+              icon: isFavourite
+                  ? const Icon(Icons.favorite)
+                  : const Icon(Icons.favorite_border_outlined))
         ],
       ),
     );
