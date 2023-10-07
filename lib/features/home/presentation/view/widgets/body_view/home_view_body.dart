@@ -9,18 +9,18 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            const SliverToBoxAdapter(
+            SliverToBoxAdapter(
               child: TitleStandard(
                 title: 'This is App',
                 fontsize: 24,
                 crossAxisAlignment: CrossAxisAlignment.center,
               ),
             ),
-            const SliverToBoxAdapter(
+            SliverToBoxAdapter(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -32,17 +32,17 @@ class HomeViewBody extends StatelessWidget {
                 ],
               ),
             ),
-            const SampleSliverList(),
+            SampleSliverList(),
             SliverToBoxAdapter(
               child: Column(
                 children: [
-                  const TitleStandard(
+                  TitleStandard(
                     title: 'Top Likes',
                     fontsize: 14,
                     crossAxisAlignment: CrossAxisAlignment.start,
                   ),
-                  PlayItem(onPressed: () {  },),
-                  const MyDivider(),
+                  PlayItem(),
+                  MyDivider(),
                 ],
               ),
             ),

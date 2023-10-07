@@ -7,10 +7,11 @@ class SampleSliverListBody extends StatelessWidget {
       {super.key,
       required this.sample,
       required this.sampleLength,
-      required this.index});
+      required this.index, });
   final String sample;
   final int sampleLength;
   final int index;
+  
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,7 +19,7 @@ class SampleSliverListBody extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 16),
           child: SampleItem(
-            sample: sample, onPressed: () {  },
+            sample: sample,
           ),
         ),
         StandardDivider(

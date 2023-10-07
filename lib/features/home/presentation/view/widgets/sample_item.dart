@@ -1,11 +1,23 @@
 import 'package:flutter/material.dart';
 
-class SampleItem extends StatelessWidget {
-  const SampleItem({super.key, required this.sample, this.isFavourite = false, required this.onPressed});
+class SampleItem extends StatefulWidget {
+  const SampleItem({
+    super.key,
+    required this.sample,
+  });
   final String sample;
 
-  final bool isFavourite;
-  final void Function() onPressed;
+  @override
+  State<SampleItem> createState() => _SampleItemState();
+}
+
+class _SampleItemState extends State<SampleItem> {
+  bool isFavorite = false;
+  onpressed() {
+    setState(() {
+      isFavorite = !isFavorite;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +28,21 @@ class SampleItem extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Text(sample),
+            child: Text(widget.sample),
           ),
           IconButton(
-              onPressed: onPressed,
-              icon: isFavourite
-                  ? const Icon(Icons.favorite)
-                  : const Icon(Icons.favorite_border_outlined))
+              onPressed: () {
+                onpressed();
+              },
+              icon: isFavorite
+                  ? const Icon(
+                      Icons.favorite,
+                      color: Colors.red,
+                    )
+                  : const Icon(
+                      Icons.favorite_border_outlined,
+                      color: Colors.red,
+                    ))
         ],
       ),
     );

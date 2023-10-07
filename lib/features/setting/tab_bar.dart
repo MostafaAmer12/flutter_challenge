@@ -21,12 +21,31 @@ class TabBarWidget extends StatelessWidget {
             ),
           ),
           TabBar(
+            labelColor: Colors.deepPurpleAccent,
+            unselectedLabelColor: Colors.grey,
+            indicatorColor: Colors.transparent,
             tabs: [
               Tab(
-                icon: Icon(Icons.home),
+                child: Column(
+                  children: [
+                    Icon(Icons.home),
+                    Text(
+                      'Home',
+                      style: TextStyle(fontSize: 8),
+                    )
+                  ],
+                ),
               ),
               Tab(
-                icon: Icon(Icons.more),
+                child: Column(
+                  children: [
+                    Icon(Icons.more),
+                    Text(
+                      'More',
+                      style: TextStyle(fontSize: 8),
+                    )
+                  ],
+                ),
               ),
             ],
           ),
