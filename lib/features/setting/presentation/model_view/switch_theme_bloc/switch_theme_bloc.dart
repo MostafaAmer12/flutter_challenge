@@ -5,12 +5,12 @@ part 'switch_theme_event.dart';
 part 'switch_theme_state.dart';
 
 class SwitchThemeBloc extends Bloc<SwitchThemeEvent, SwitchThemeState> {
-  SwitchThemeBloc() : super(const SwitchThemeInitial(switchValue: false)) {
+  SwitchThemeBloc() : super(const SwitchThemeInitial(false)) {
     on<SwitchDarkThemeEvent>((event, emit) {
-      emit(const SwitchThemeInitial(switchValue: true));
+      emit(const SwitchThemeInitial(true));
     });
     on<SwitchLightThemeEvent>((event, emit) {
-      emit(const SwitchThemeInitial(switchValue: false));
+      emit(const SwitchThemeInitial(false));
     });
   }
 }

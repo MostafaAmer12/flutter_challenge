@@ -1,0 +1,14 @@
+{"@@locale": "en",
+    "TabBar1":"Home",
+    "TabBar2":"More",
+    "Sample1":"Sample Text 1",
+    "Sample2":"Sample Text 2",
+    "Sample3":"Sample Text 3",
+    "HomeAppBar":"This is App",
+    "Likes":"Top Likes",
+    "MoreAppBar":"More",
+    "Settings":"Settings",
+    "DarkMode":"Dark Mode",
+    "ArabicLanguage":"Arabic Language",
+    "PlayThis":"Play this"
+}

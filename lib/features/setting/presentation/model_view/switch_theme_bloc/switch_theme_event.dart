@@ -1,5 +1,3 @@
-// ignore_for_file: camel_case_types
-
 part of 'switch_theme_bloc.dart';
 
 abstract class SwitchThemeEvent extends Equatable {
@@ -12,3 +10,4 @@ abstract class SwitchThemeEvent extends Equatable {
 class SwitchDarkThemeEvent extends SwitchThemeEvent {}
 
 class SwitchLightThemeEvent extends SwitchThemeEvent {}
+

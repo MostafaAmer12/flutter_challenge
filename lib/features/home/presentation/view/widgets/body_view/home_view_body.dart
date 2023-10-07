@@ -3,19 +3,22 @@ import 'package:flutter_challenge/core/utils/divider.dart';
 import 'package:flutter_challenge/features/home/presentation/view/widgets/play_item.dart';
 import 'package:flutter_challenge/features/home/presentation/view/widgets/sample_sliver_list.dart';
 import 'package:flutter_challenge/core/shared_widgets/title_standard.dart';
+import 'package:flutter_challenge/generated/l10n.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final cont = S.of(context);
+
+    return Scaffold(
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
               child: TitleStandard(
-                title: 'This is App',
+                title: cont.HomeAppBar,
                 fontsize: 24,
                 crossAxisAlignment: CrossAxisAlignment.center,
               ),
@@ -25,24 +28,24 @@ class HomeViewBody extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TitleStandard(
-                    title: 'Top Likes',
+                    title: cont.Likes,
                     fontsize: 14,
                     crossAxisAlignment: CrossAxisAlignment.start,
                   ),
                 ],
               ),
             ),
-            SampleSliverList(),
+            const SampleSliverList(),
             SliverToBoxAdapter(
               child: Column(
                 children: [
                   TitleStandard(
-                    title: 'Top Likes',
+                    title: cont.Likes,
                     fontsize: 14,
                     crossAxisAlignment: CrossAxisAlignment.start,
                   ),
-                  PlayItem(),
-                  MyDivider(),
+                  const PlayItem(),
+                  const MyDivider(),
                 ],
               ),
             ),

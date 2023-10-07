@@ -1,0 +1,15 @@
+{
+  "@@locale": "ar",
+  "TabBar1": "الرئيسية",
+  "TabBar2": "المزيد",
+  "Sample1": "عينة 1",
+  "Sample2": "عينة 2",
+  "Sample3": "عينة 3",
+  "HomeAppBar": "هذا تطبيق",
+  "Likes": "أعلي الإعجابات",
+  "MoreAppBar": "المزيد",
+  "Settings": "الإعدادات",
+  "DarkMode": "وضع النهار",
+  "ArabicLanguage": "اللغة الإنجليزية",
+  "PlayThis": "اضغط للتشغيل"
+}

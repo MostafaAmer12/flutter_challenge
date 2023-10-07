@@ -2,6 +2,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_challenge/features/home/presentation/model_view/cubit/home_cubit.dart';
+import 'package:flutter_challenge/generated/l10n.dart';
 
 class PlayItem extends StatefulWidget {
   const PlayItem({
@@ -55,7 +56,9 @@ class _PlayItemState extends State<PlayItem> {
                           : Icons.play_circle_outline_outlined,
                       color: Colors.deepPurpleAccent,
                     )),
-                const Text('Play This'),
+                Text(
+                  S.of(context).PlayThis,
+                ),
               ],
             ),
           );

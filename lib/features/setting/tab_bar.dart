@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_challenge/features/home/presentation/view/home_view.dart';
 import 'package:flutter_challenge/features/setting/presentation/view/setting_view.dart';
+import 'package:flutter_challenge/generated/l10n.dart';
 
 class TabBarWidget extends StatelessWidget {
   const TabBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const DefaultTabController(
+    final cont = S.of(context);
+
+    return DefaultTabController(
       length: 2,
       child: Scaffold(
           body: Column(
         children: [
-          Expanded(
+          const Expanded(
             child: TabBarView(
               children: [
                 HomeView(),
@@ -28,10 +31,10 @@ class TabBarWidget extends StatelessWidget {
               Tab(
                 child: Column(
                   children: [
-                    Icon(Icons.home),
+                    const Icon(Icons.home),
                     Text(
-                      'Home',
-                      style: TextStyle(fontSize: 8),
+                      cont.TabBar1,
+                      style: const TextStyle(fontSize: 8),
                     )
                   ],
                 ),
@@ -39,10 +42,10 @@ class TabBarWidget extends StatelessWidget {
               Tab(
                 child: Column(
                   children: [
-                    Icon(Icons.more),
+                    const Icon(Icons.more),
                     Text(
-                      'More',
-                      style: TextStyle(fontSize: 8),
+                      cont.TabBar2,
+                      style: const TextStyle(fontSize: 8),
                     )
                   ],
                 ),
